@@ -1,4 +1,4 @@
-# Тестовое задание Фронтенд разработчик React (Грин-Апи)
+# Тестовое задание на вакансию Фронтенд разработчик React (Грин-Апи)
 
 ### Стэк:
 * CSS, Flexbox, Grid Layout
@@ -37,4 +37,4 @@ WhatsApp
 • Пользователь видит ответ получателя в чате
 
 ### Ссылки:
-* :mag_right: [Открыть проект](https://gutmalina.github.io/test-task-pixel-perfect-layout/)
+* :mag_right: [Открыть проект](https://gutmalina.github.io/green-api/)
