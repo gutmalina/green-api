@@ -10,3 +10,5 @@ export const BTN_LOADER = 'Загрузка данных';
 export const ERROR_NOVALID_ACCAUNT = 'Данные аккаунта не валидны';
 export const ERROR_ABONENT = 'Контакт уже есть в списке';
 export const ERROR_NUMBER_ABONENT = 'Введите 10 цифр номера телефона';
+export const ERROR_SEND_MESSAGE = 'Исчерпан лимит на количество чатов';
+export const ERROR = 'Ошибка';

@@ -8,7 +8,9 @@ import {
   MESSAGE_PLACEHOLDER,
   ABONENT_PLACEHOLDER,
   ERROR_ABONENT,
-  ERROR_NUMBER_ABONENT
+  ERROR_NUMBER_ABONENT,
+  ERROR_SEND_MESSAGE,
+  ERROR
 } from "../../utils/constants";
 import { useForm } from "../../hooks/useForm";
 import api from "../../utils/api";
@@ -25,6 +27,7 @@ const Container = ({
   setListMessages
 }) => {
   const [error, setError] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const { values, handleChange, setValues } = useForm(
     { message: "", abonent: "" }
   );
@@ -32,6 +35,7 @@ const Container = ({
 
   /** фильтр сообщений при изменении чата */
   useEffect(() => {
+    setErrorMessage("");
     if(listMessages){
       const arr = listMessages.filter((item) => {
           if (item.type === "get") {
@@ -69,7 +73,12 @@ const Container = ({
           ]);
           setValues({message: ""})
         })
-        .catch((err) => console.log("err", err));
+        .catch((err) => {
+          if(err.status === 466){
+            setErrorMessage(ERROR_SEND_MESSAGE)
+          }
+          setErrorMessage(`${ERROR} ${err.status}`)
+        })
     }
   };
 
@@ -95,6 +104,7 @@ const Container = ({
 
   const deleteMessage = () => {
     setValues({message: ""})
+    setErrorMessage("")
   };
 
   const classNameContainer =
@@ -138,6 +148,7 @@ const Container = ({
       {type === CONTAINER_TYPE_CHAT ? (
         <>
           <ScrollBarChat listMessages={renderListMessage} />
+          <span className={styles.error_send}>{errorMessage}</span>
           <form className={styles.form} onSubmit={handleSubmint}>
             <input
               id="message"

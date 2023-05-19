@@ -83,3 +83,12 @@
   height: max-content;
   max-height: 20%;
 }
+
+.error_send {
+  color: red;
+  width: 100%;
+  text-align: center;
+  height: max-content;
+  max-height: 20%;
+  padding: 2%;
+}
