@@ -10,7 +10,7 @@ import {
   ERROR_ABONENT,
   ERROR_NUMBER_ABONENT,
   ERROR_SEND_MESSAGE,
-  ERROR
+  ERROR,
 } from "../../utils/constants";
 import { useForm } from "../../hooks/useForm";
 import api from "../../utils/api";
@@ -24,27 +24,28 @@ const Container = ({
   setListAbonents,
   setAbonentChat,
   listMessages,
-  setListMessages
+  setListMessages,
 }) => {
   const [error, setError] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-  const { values, handleChange, setValues } = useForm(
-    { message: "", abonent: "" }
-  );
+  const { values, handleChange, setValues } = useForm({
+    message: "",
+    abonent: "",
+  });
   const [renderListMessage, setRenderListMessage] = useState([]);
 
   /** фильтр сообщений при изменении чата */
   useEffect(() => {
     setErrorMessage("");
-    if(listMessages){
+    if (listMessages) {
       const arr = listMessages.filter((item) => {
-          if (item.type === "get") {
-            return item.sender === name;
-          } else {
-            return item.recipient === name;
-          }
-        })
-      setRenderListMessage(arr)
+        if (item.type === "get") {
+          return item.sender === name;
+        } else {
+          return item.recipient === name;
+        }
+      });
+      setRenderListMessage(arr);
     }
   }, [listMessages, name, user]);
 
@@ -71,29 +72,30 @@ const Container = ({
               type: "send",
             },
           ]);
-          setValues({message: ""})
+          setValues({ message: "" });
         })
         .catch((err) => {
-          if(err.status === 466){
-            setErrorMessage(ERROR_SEND_MESSAGE)
+          if (err.status === 466) {
+            setErrorMessage(ERROR_SEND_MESSAGE);
+          } else {
+            setErrorMessage(`${ERROR} ${err.statusText}`);
           }
-          setErrorMessage(`${ERROR} ${err.status}`)
-        })
+        });
     }
   };
 
   const addAbonent = (e) => {
-    e.preventDefault()
-    if (values.abonent && !(isNaN(values.abonent))) {
+    e.preventDefault();
+    if (values.abonent && !isNaN(values.abonent)) {
       if (!listAbonents.find((item) => item.chatId === values.abonent)) {
         setListAbonents((current) => [...current, { chatId: values.abonent }]);
         setValues({ abonent: "" });
-        setError("")
-      }else{
-        setError(ERROR_ABONENT)
+        setError("");
+      } else {
+        setError(ERROR_ABONENT);
       }
-    }else{
-      setError(ERROR_NUMBER_ABONENT)
+    } else {
+      setError(ERROR_NUMBER_ABONENT);
     }
   };
 
@@ -103,8 +105,8 @@ const Container = ({
   };
 
   const deleteMessage = () => {
-    setValues({message: ""})
-    setErrorMessage("")
+    setValues({ message: "" });
+    setErrorMessage("");
   };
 
   const classNameContainer =
@@ -114,7 +116,7 @@ const Container = ({
 
   return (
     <section className={classNameContainer}>
-      <CardUser name={name}/>
+      <CardUser name={name} />
       {type === CONTAINER_TYPE_CONTACTS ? (
         <>
           <form className={styles.abonent_form} onSubmit={addAbonent}>
