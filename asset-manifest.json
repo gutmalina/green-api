@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/green-api/static/css/main.59f6d465.css",
-    "main.js": "/green-api/static/js/main.719be389.js",
+    "main.css": "/green-api/static/css/main.fabf779a.css",
+    "main.js": "/green-api/static/js/main.74b7fd39.js",
     "static/js/787.5c472d1d.chunk.js": "/green-api/static/js/787.5c472d1d.chunk.js",
     "static/media/blank_avatar_8s4gdoyexi6n.svg": "/green-api/static/media/blank_avatar_8s4gdoyexi6n.bf6feeae6a7c7cd2e77a.svg",
     "index.html": "/green-api/index.html",
     "static/media/4115237-add-plus_114047.svg": "/green-api/static/media/4115237-add-plus_114047.8b87eea9b8f063a9f7b4.svg",
     "static/media/1487086345-cross_81577.svg": "/green-api/static/media/1487086345-cross_81577.269d5b02bde5a426db0f.svg",
     "static/media/send_message_chat_icon_177294.svg": "/green-api/static/media/send_message_chat_icon_177294.225187c88ba4fe9eae52.svg",
-    "main.59f6d465.css.map": "/green-api/static/css/main.59f6d465.css.map",
-    "main.719be389.js.map": "/green-api/static/js/main.719be389.js.map",
+    "main.fabf779a.css.map": "/green-api/static/css/main.fabf779a.css.map",
+    "main.74b7fd39.js.map": "/green-api/static/js/main.74b7fd39.js.map",
     "787.5c472d1d.chunk.js.map": "/green-api/static/js/787.5c472d1d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.59f6d465.css",
-    "static/js/main.719be389.js"
+    "static/css/main.fabf779a.css",
+    "static/js/main.74b7fd39.js"
   ]
 }
