@@ -36,5 +36,11 @@ WhatsApp
 • Получатель отвечает на сообщение в мессенджере WhatsApp
 • Пользователь видит ответ получателя в чате
 
+### Установка локальной версии
+* Скопируйте ссылку https://github.com/gutmalina/green-api.git
+* Склонируйте репозиторий git clone https://github.com/gutmalina/green-api.git
+* Запустите команду npm install, или npm install react-script --save
+* Запустите команду npm start
+
 ### Ссылки:
 * :mag_right: [Открыть проект](https://gutmalina.github.io/green-api/)

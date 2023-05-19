@@ -79,6 +79,7 @@ const Container = ({
       if (!listAbonents.find((item) => item.chatId === values.abonent)) {
         setListAbonents((current) => [...current, { chatId: values.abonent }]);
         setValues({ abonent: "" });
+        setError("")
       }else{
         setError(ERROR_ABONENT)
       }
