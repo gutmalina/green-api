@@ -1,0 +1,29 @@
+.card_abonent {
+  background-color: rgb(255, 255, 255);
+  width: inherit;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.card_img {
+  margin-right: 25px;
+  background-image: url(../../images/blank_avatar_8s4gdoyexi6n.svg);
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.card_border {
+  border-bottom: 1px solid rgb(59, 74, 84);
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+

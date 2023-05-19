@@ -1,0 +1,30 @@
+.container {
+  min-width: min-content;
+  max-width: 60%;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: auto, auto;
+  border-radius: 10px;
+  margin: 5px;
+}
+
+.container_type_get {
+  background-color: rgb(255, 255, 255);
+  align-self: flex-start;
+}
+
+.container_type_send {
+  background-color: rgb(217, 253, 211);
+  align-self: flex-end;
+}
+
+.text_message {
+  margin: 0;
+}
+
+.date {
+  margin: 0;
+  grid-column: 2;
+  grid-row: 2;
+  color: rgb(102, 119, 129);
+}

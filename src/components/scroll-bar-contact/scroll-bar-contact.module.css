@@ -1,0 +1,5 @@
+.scroll_bar_contact {
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
